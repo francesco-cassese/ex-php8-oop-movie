@@ -2,10 +2,10 @@
 
 class Genre
 {
-    public $name;
-    public $description;
+    public string $name;
+    public string $description;
 
-    public function __construct($_name, $_description = "")
+    public function __construct(string $_name, $_description = "")
     {
         $this->name = $_name;
         $this->description = $_description;
@@ -15,12 +15,12 @@ class Genre
 
 class Movie
 {
-    public $title;
-    public $genre;
-    public $duration;
-    public $year;
+    public string $title;
+    public object $genre;
+    public int $duration;
+    public int $year;
 
-    public function __construct($_title, Genre $_genre, $_duration, $_year)
+    public function __construct(string $_title, Genre $_genre, int $_duration, int $_year)
     {
         $this->title = $_title;
         $this->genre = $_genre;
