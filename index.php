@@ -16,31 +16,50 @@ class Genre
 class Movie
 {
     public string $title;
-    public object $genre;
+    public array $genres;
     public int $duration;
     public int $year;
 
-    public function __construct(string $_title, Genre $_genre, int $_duration, int $_year)
+    public function __construct(string $_title, array $_genres, int $_duration, int $_year)
     {
         $this->title = $_title;
-        $this->genre = $_genre;
+        $this->genres = $_genres;
         $this->duration = $_duration;
         $this->year = $_year;
     }
 
+    public function getGenresList()
+    {
+        $genreNames = [];
+        foreach ($this->genres as $genre) {
+            $genreNames[] = $genre->name;
+        }
+        return implode(", ", $genreNames);
+    }
+
     public function getFullDetails()
     {
-        return "'{$this->title}' ({$this->year}) - Genere: {$this->genre}, Durata: {$this->duration} min";
+        return "'{$this->title}' ({$this->year}) - Genere: {$this->getGenresList()}, Durata: {$this->duration} min";
     }
 }
 
-$actionGenre = new Genre(
-    "Azione / Biografico",
-    "Film basati su eventi reali con sequenze ad alto tasso di adrenalina."
+$action = new Genre("Azione", "Film con scene d'azione ad alto impatto.");
+$biography = new Genre("Biografico", "Tratto da una storia vera.");
+$drama = new Genre("Drammatico", "Storie ad alto impatto emotivo.");
+
+$fordVFerrari = new Movie(
+    "Le Mans '66 - La grande sfida",
+    [$action, $biography, $drama],
+    152,
+    2019
 );
 
-$fordVFerrari = new Movie("Le Mans '66 - La grande sfida", $actionGenre, 152, 2019);
-$rush = new Movie("Rush", $actionGenre, 123, 2013);
+$rush = new Movie(
+    "Rush",
+    [$action, $biography],
+    123,
+    2013
+);
 
 var_dump($fordVFerrari);
 var_dump($rush);
