@@ -14,6 +14,8 @@ $fordVFerrari = new Movie(
     2019
 );
 
+$fordVFerrari->setVote(10);
+
 $rush = new Movie(
     "Rush",
     [$action, $biography],
