@@ -12,6 +12,9 @@ Nessun framework, nessuna dipendenza esterna, nessun database: solo PHP 8 e clas
 - Supporto a generi multipli per ogni film, con elenco generato dinamicamente (`getGenresList()`)
 - Trait `Rateable` riutilizzabile per aggiungere un sistema di valutazione (voto da 1 a 10) a qualsiasi classe, con validazione dell'intervallo e gestione della proprietà non ancora inizializzata
 - Metodo `getFullDetails()` per ottenere una descrizione testuale completa del film
+- Markup semantico e accessibile: lista film come `<ul>`/`<li>`, skip link per saltare al contenuto principale, testo alternativo delle locandine generato dal titolo del film
+- Layout responsive con meta viewport e fogli di stile basati su variabili CSS (colori, ombre) per una gestione centralizzata del tema
+- Card con altezza del titolo fissa, in modo che le righe Genere/Durata/Voto siano allineate tra le card anche con titoli di lunghezza diversa
 
 ## 📸 Screenshot
 
@@ -44,7 +47,7 @@ La traccia suggeriva inoltre di curare l'organizzazione del codice suddividendol
 ## 🛠️ Stack tecnico
 
 - PHP 8 (nessun framework), con type hinting su proprietà e costruttori
-- HTML5 / CSS3
+- HTML5 semantico e accessibile / CSS3 con variabili custom
 - Programmazione a oggetti: classi, trait, incapsulamento delle proprietà
 
 ## 📁 Struttura del progetto
