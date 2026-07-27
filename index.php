@@ -9,23 +9,26 @@ $movies = [$fordVFerrari, $rush];
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Movie Collection</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
+    <a class="skip-link" href="#main-content">Salta al contenuto principale</a>
+
     <header class="navbar">
         <span class="logo">MOVIEFLIX</span>
     </header>
 
-    <main>
+    <main id="main-content">
         <h1>La mia collezione di film</h1>
 
-        <div class="movie-list">
+        <ul class="movie-list">
             <?php foreach ($movies as $movie): ?>
-                <div class="movie-card">
+                <li class="movie-card">
                     <div class="movie-card__poster">
-                        <img src="img/poster-placeholder.jpg" alt="Locandina non disponibile" class="movie-card__poster-img">
+                        <img src="img/poster-placeholder.jpg" alt="Locandina di <?= htmlspecialchars($movie->title) ?>" class="movie-card__poster-img">
                         <span class="movie-card__year"><?= $movie->year ?></span>
                     </div>
                     <div class="movie-card__body">
@@ -34,9 +37,9 @@ $movies = [$fordVFerrari, $rush];
                         <p><strong>Durata:</strong> <?= $movie->duration ?> min</p>
                         <p class="vote"><?= $movie->getRatingStars() ?></p>
                     </div>
-                </div>
+                </li>
             <?php endforeach; ?>
-        </div>
+        </ul>
     </main>
 </body>
 
