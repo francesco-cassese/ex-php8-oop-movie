@@ -27,7 +27,8 @@ $movies = [$fordVFerrari, $rush];
         <h1>La mia collezione di film</h1>
 
         <ul class="movie-list">
-            <?php // Per ogni film in elenco genero una card con i suoi dati. ?>
+
+            <!-- // Per ogni film in elenco genero una card con i suoi dati. -->
             <?php foreach ($movies as $movie): ?>
                 <li class="movie-card">
                     <div class="movie-card__poster">
