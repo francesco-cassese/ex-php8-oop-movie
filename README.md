@@ -7,7 +7,8 @@ Nessun framework, nessuna dipendenza esterna, nessun database: solo PHP 8 e clas
 ## ✨ Funzionalità
 
 - Visualizzazione della collezione film come galleria di card, con locandina, titolo, genere, durata e anno
-- Classe `Movie` con proprietà tipizzate (titolo, generi, durata, anno) e costruttore
+- Collezione a tema corse automobilistiche (7 film, da "Le Mans '66" a "Cars"), ciascuno con una locandina propria invece di un'immagine segnaposto condivisa
+- Classe `Movie` con proprietà tipizzate (titolo, generi, durata, anno, locandina) e costruttore, con locandina segnaposto di default se non specificata
 - Classe `Genre` per rappresentare i generi cinematografici (nome e descrizione)
 - Supporto a generi multipli per ogni film, con elenco generato dinamicamente (`getGenresList()`)
 - Trait `Rateable` riutilizzabile per aggiungere un sistema di valutazione (voto da 1 a 10) a qualsiasi classe, con validazione dell'intervallo e gestione della proprietà non ancora inizializzata
@@ -57,7 +58,14 @@ ex-php8-oop-movie/
 ├── css/
 │   └── style.css        # Stili dell'applicazione
 ├── img/
-│   └── poster-placeholder.jpg  # Locandina segnaposto
+│   ├── poster-placeholder.jpg   # Locandina segnaposto di default
+│   ├── poster-le-mans-66.jpg
+│   ├── poster-rush.jpg
+│   ├── poster-giorni-di-tuono.jpg
+│   ├── poster-senna.jpg
+│   ├── poster-gran-turismo.jpg
+│   ├── poster-taxi.jpg
+│   └── poster-cars.jpg          # Locandine dei singoli film
 ├── Models/
 │   ├── Genre.php         # Classe Genre (nome, descrizione)
 │   ├── Movie.php         # Classe Movie (usa il trait Rateable)
@@ -95,7 +103,7 @@ Poi visita `http://localhost:8000`.
 
 ## 🔎 Come funziona
 
-- `db.php` crea alcune istanze di `Genre` e di `Movie`, assegnando a ciascun film uno o più generi e un voto tramite `setVote()` (fornito dal trait `Rateable`).
+- `db.php` crea le istanze di `Genre` e di `Movie` della collezione (7 film a tema corse automobilistiche), assegnando a ciascun film uno o più generi, una locandina dedicata e un voto tramite `setVote()` (fornito dal trait `Rateable`).
 - `index.php` include `db.php`, ottiene l'elenco dei film e ne stampa una card per ciascuno, mostrando titolo, generi (tramite `getGenresList()`), durata, anno e valutazione (tramite `getRatingStars()`).
 - La classe `Movie` usa il trait `Rateable` per ereditare la logica di valutazione senza duplicare codice, mentre `getFullDetails()` costruisce una descrizione testuale completa del film.
 - Il trait `Rateable` valida che il voto sia compreso tra 1 e 10 e gestisce il caso in cui la proprietà `vote` non sia ancora stata impostata, restituendo un messaggio di default.
