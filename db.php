@@ -8,6 +8,9 @@ require_once __DIR__ . '/Models/Movie.php';
 $action = new Genre("Azione", "Film con scene d'azione ad alto impatto.");
 $biography = new Genre("Biografico", "Tratto da una storia vera.");
 $drama = new Genre("Drammatico", "Storie ad alto impatto emotivo.");
+$comedy = new Genre("Commedia", "Film pensati per divertire e far ridere.");
+$documentary = new Genre("Documentario", "Racconto basato su materiale e riprese reali.");
+$animation = new Genre("Animazione", "Film realizzato in computer grafica o disegno.");
 
 // Creo il primo film passando i generi già istanziati sopra.
 $fordVFerrari = new Movie(
@@ -29,3 +32,53 @@ $rush = new Movie(
 );
 
 $rush->setVote(9);
+
+// Creo il terzo film.
+$daysOfThunder = new Movie(
+    "Giorni di tuono",
+    [$action, $drama],
+    107,
+    1990
+);
+
+$daysOfThunder->setVote(7);
+
+// Creo il quarto film.
+$senna = new Movie(
+    "Senna",
+    [$biography, $documentary],
+    106,
+    2010
+);
+
+$senna->setVote(9);
+
+// Creo il quinto film.
+$granTurismo = new Movie(
+    "Gran Turismo",
+    [$action, $biography],
+    134,
+    2023
+);
+
+$granTurismo->setVote(8);
+
+// Creo il sesto film.
+$taxi = new Movie(
+    "Taxi",
+    [$action, $comedy],
+    86,
+    1998
+);
+
+$taxi->setVote(8);
+
+// Creo il settimo film.
+$cars = new Movie(
+    "Cars - Motori ruggenti",
+    [$animation, $comedy],
+    117,
+    2006
+);
+
+$cars->setVote(9);

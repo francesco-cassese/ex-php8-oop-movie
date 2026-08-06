@@ -4,7 +4,7 @@
 require_once __DIR__ . '/db.php';
 
 // Raggruppo i film in un array così posso scorrerli con un solo ciclo nel markup sotto.
-$movies = [$fordVFerrari, $rush];
+$movies = [$fordVFerrari, $rush, $daysOfThunder, $senna, $granTurismo, $taxi, $cars];
 ?>
 <!DOCTYPE html>
 <html lang="it">
