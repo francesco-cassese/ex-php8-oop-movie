@@ -17,7 +17,8 @@ $fordVFerrari = new Movie(
     "Le Mans '66 - La grande sfida",
     [$action, $biography, $drama],
     152,
-    2019
+    2019,
+    "img/poster-le-mans-66.jpg"
 );
 
 // Assegno il voto tramite setVote(), così passa dalla validazione.
@@ -28,7 +29,8 @@ $rush = new Movie(
     "Rush",
     [$action, $biography],
     123,
-    2013
+    2013,
+    "img/poster-rush.jpg"
 );
 
 $rush->setVote(9);
@@ -38,7 +40,8 @@ $daysOfThunder = new Movie(
     "Giorni di tuono",
     [$action, $drama],
     107,
-    1990
+    1990,
+    "img/poster-giorni-di-tuono.jpg"
 );
 
 $daysOfThunder->setVote(7);
@@ -48,7 +51,8 @@ $senna = new Movie(
     "Senna",
     [$biography, $documentary],
     106,
-    2010
+    2010,
+    "img/poster-senna.jpg"
 );
 
 $senna->setVote(9);
@@ -58,7 +62,8 @@ $granTurismo = new Movie(
     "Gran Turismo",
     [$action, $biography],
     134,
-    2023
+    2023,
+    "img/poster-gran-turismo.jpg"
 );
 
 $granTurismo->setVote(8);
@@ -68,7 +73,8 @@ $taxi = new Movie(
     "Taxi",
     [$action, $comedy],
     86,
-    1998
+    1998,
+    "img/poster-taxi.jpg"
 );
 
 $taxi->setVote(8);
@@ -78,7 +84,8 @@ $cars = new Movie(
     "Cars - Motori ruggenti",
     [$animation, $comedy],
     117,
-    2006
+    2006,
+    "img/poster-cars.jpg"
 );
 
 $cars->setVote(9);

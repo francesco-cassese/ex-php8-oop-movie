@@ -32,7 +32,7 @@ $movies = [$fordVFerrari, $rush, $daysOfThunder, $senna, $granTurismo, $taxi, $c
             <?php foreach ($movies as $movie): ?>
                 <li class="movie-card">
                     <div class="movie-card__poster">
-                        <img src="img/poster-placeholder.jpg" alt="Locandina di <?= htmlspecialchars($movie->title) ?>" class="movie-card__poster-img">
+                        <img src="<?= htmlspecialchars($movie->poster) ?>" alt="Locandina di <?= htmlspecialchars($movie->title) ?>" class="movie-card__poster-img">
                         <span class="movie-card__year"><?= $movie->year ?></span>
                     </div>
                     <div class="movie-card__body">

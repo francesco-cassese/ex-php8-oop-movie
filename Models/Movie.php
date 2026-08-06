@@ -13,14 +13,16 @@ class Movie
     private array $genres;
     public int $duration;
     public int $year;
+    public string $poster;
 
-    public function __construct(string $_title, array $_genres, int $_duration, int $_year)
+    public function __construct(string $_title, array $_genres, int $_duration, int $_year, string $_poster = "img/poster-placeholder.jpg")
     {
         // Valorizzo tutte le proprietà del film con i parametri ricevuti dal costruttore.
         $this->title = $_title;
         $this->genres = $_genres;
         $this->duration = $_duration;
         $this->year = $_year;
+        $this->poster = $_poster;
     }
 
     public function getGenresList()
